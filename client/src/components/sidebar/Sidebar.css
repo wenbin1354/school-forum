@@ -1,0 +1,23 @@
+/* In your CSS or styles file */
+.dropdown-item {
+	display: flex;
+	align-items: center;
+	position: relative;
+}
+
+/* Add a vertical line */
+.dropdown-item::before {
+	margin-left: 40px;
+	content: "";
+	position: absolute;
+	left: 1;
+	top: 0;
+	bottom: 0;
+	width: 1px; /* Width of the vertical line */
+	background-color: #b5b5b5; /* Your desired color */
+}
+
+/* Adjust padding to make room for the line */
+.dropdown-item .MuiListItemText-root {
+	padding-left: 10px; /* Adjust this value as needed */
+}

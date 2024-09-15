@@ -1,0 +1,50 @@
+from django.urls import path
+from .views import CommentsView, ElectiveView, MajorView, RequestView, UserCommentsView, VotingCommentsView
+
+urlpatterns = [
+    path(
+        'comments/<str:elective_id>',
+        CommentsView.as_view(),
+    ),
+    path(
+        'create_comment',
+        CommentsView.as_view(),
+    ),
+    path(
+        'electives',
+        ElectiveView.as_view(),
+    ),
+    path(
+        'majors',
+        MajorView.as_view(),
+    ),
+    path(
+        'create_elective',
+        ElectiveView.as_view(),
+    ),
+    path(
+        'create_major',
+        MajorView.as_view(),
+    ),
+    path(
+        'pending_requests',
+        RequestView.as_view(),
+    ),
+    path(
+        'create_request',
+        RequestView.as_view(),
+    ),
+    path(
+        'my_comments',
+        UserCommentsView.as_view(),
+    ),
+    path(
+        "delete_comment/<str:comment_id>",
+        UserCommentsView.as_view(),
+    )
+    ,
+    path(
+        '<str:comment_id>/vote',
+        VotingCommentsView.as_view(),
+    )
+]
